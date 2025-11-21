@@ -28,7 +28,7 @@ export const RobotPreview = ({ initializedHardware = [] }: RobotPreviewProps) =>
 
         <div className="bg-card border border-border rounded-lg p-4 mb-4">
           <p className="text-sm text-muted-foreground mb-4">
-            Initialize edilen donanımlar burada görünecek
+            Initialized hardware will appear here
           </p>
           
           {/* Robot Chassis SVG */}
@@ -124,7 +124,7 @@ export const RobotPreview = ({ initializedHardware = [] }: RobotPreviewProps) =>
           <h3 className="text-sm font-semibold text-foreground mb-2">Initialized Hardware</h3>
           {hardware.length === 0 ? (
             <p className="text-xs text-muted-foreground italic">
-              Henüz donanım initialize edilmedi
+              No hardware initialized yet
             </p>
           ) : (
             <ul className="space-y-1">

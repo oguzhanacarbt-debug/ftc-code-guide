@@ -3,31 +3,31 @@ import { Book, Zap, Settings, Code2, Compass, Database, Lightbulb, HelpCircle } 
 
 const navigation = [
   {
-    title: "Başlangıç",
+    title: "Getting Started",
     icon: Zap,
     items: [
-      { title: "Ana Sayfa", href: "/" },
-      { title: "FTC'ye Giriş", href: "/getting-started" },
+      { title: "Home", href: "/" },
+      { title: "Introduction to FTC", href: "/getting-started" },
     ],
   },
   {
-    title: "Temel Programlama",
+    title: "Basic Programming",
     icon: Code2,
     items: [
-      { title: "Değişkenler & Fonksiyonlar", href: "/basics" },
-      { title: "OpMode Yapısı", href: "/opmode" },
+      { title: "Variables & Functions", href: "/basics" },
+      { title: "OpMode Structure", href: "/opmode" },
     ],
   },
   {
-    title: "Robot Kurulumu",
+    title: "Robot Setup",
     icon: Settings,
     items: [
       { title: "Hardware Initialization", href: "/robot-init" },
-      { title: "Motor & Servo", href: "/motors" },
+      { title: "Motors & Servos", href: "/motors" },
     ],
   },
   {
-    title: "Hareket Sistemleri",
+    title: "Movement Systems",
     icon: Compass,
     items: [
       { title: "Tank Drive", href: "/tank-drive" },
@@ -35,7 +35,7 @@ const navigation = [
     ],
   },
   {
-    title: "Sensörler",
+    title: "Sensors",
     icon: Database,
     items: [
       { title: "IMU", href: "/sensors-imu" },
@@ -43,18 +43,18 @@ const navigation = [
     ],
   },
   {
-    title: "Örnek Kodlar",
+    title: "Code Examples",
     icon: Lightbulb,
     items: [
-      { title: "Basit TeleOp", href: "/examples-teleop" },
+      { title: "Simple TeleOp", href: "/examples-teleop" },
       { title: "Autonomous", href: "/examples-auto" },
     ],
   },
   {
-    title: "Yardım",
+    title: "Help",
     icon: HelpCircle,
     items: [
-      { title: "SSS", href: "/faq" },
+      { title: "FAQ", href: "/faq" },
     ],
   },
 ];
