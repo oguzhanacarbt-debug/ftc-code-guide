@@ -43,7 +43,7 @@ const GettingStarted = () => {
           <Card className="p-5 bg-muted/50 border-border">
             <h4 className="font-semibold text-foreground mb-2">FTC Robot Anatomy</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><strong className="text-foreground">Robot Controller:</strong> Android phone that controls the robot</li>
+              <li><strong className="text-foreground">Robot Controller:</strong> Legal android phones or Driver Stations that controls the robot</li>
               <li><strong className="text-foreground">Driver Station:</strong> Control phone used by drivers</li>
               <li><strong className="text-foreground">Control Hub/Expansion Hub:</strong> Electronic brain where motors and sensors connect</li>
               <li><strong className="text-foreground">Motors & Servos:</strong> Actuators that provide movement</li>
