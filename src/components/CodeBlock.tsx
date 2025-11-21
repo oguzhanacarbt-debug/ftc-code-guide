@@ -32,12 +32,12 @@ export const CodeBlock = ({ code, language = "java", showLineNumbers = true }: C
           {copied ? (
             <>
               <Check className="w-3 h-3" />
-              Kopyalandı
+              Copied
             </>
           ) : (
             <>
               <Copy className="w-3 h-3" />
-              Kopyala
+              Copy
             </>
           )}
         </Button>
