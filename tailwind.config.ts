@@ -57,6 +57,18 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        code: {
+          bg: "hsl(var(--code-bg))",
+          foreground: "hsl(var(--code-foreground))",
+        },
+        robot: {
+          panel: "hsl(var(--robot-panel-bg))",
+          highlight: "hsl(var(--robot-highlight))",
+        },
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Fira Code", "Consolas", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",
