@@ -104,7 +104,7 @@ const Index = () => {
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Begin learning FTC robot programming now. Everything you need 
-            to write your first OpMode is right here.
+            to write your first code is right here.
           </p>
           <Link to="/getting-started">
             <Button size="lg" className="gap-2">
