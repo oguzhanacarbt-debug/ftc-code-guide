@@ -11,51 +11,11 @@ const navigation = [
     ],
   },
   {
-    title: "Basic Programming",
-    icon: Code2,
-    items: [
-      { title: "Variables & Functions", href: "/basics" },
-      { title: "OpMode Structure", href: "/opmode" },
-    ],
-  },
-  {
     title: "Robot Setup",
     icon: Settings,
     items: [
       { title: "Hardware Initialization", href: "/robot-init" },
-      { title: "Motors & Servos", href: "/motors" },
       { title: "Autonomous Mode", href: "/autonomous" },
-    ],
-  },
-  {
-    title: "Movement Systems",
-    icon: Compass,
-    items: [
-      { title: "Tank Drive", href: "/tank-drive" },
-      { title: "Mecanum Drive", href: "/mecanum-drive" },
-    ],
-  },
-  {
-    title: "Sensors",
-    icon: Database,
-    items: [
-      { title: "IMU", href: "/sensors-imu" },
-      { title: "Encoders", href: "/sensors-encoders" },
-    ],
-  },
-  {
-    title: "Code Examples",
-    icon: Lightbulb,
-    items: [
-      { title: "Simple TeleOp", href: "/examples-teleop" },
-      { title: "Autonomous", href: "/examples-auto" },
-    ],
-  },
-  {
-    title: "Help",
-    icon: HelpCircle,
-    items: [
-      { title: "FAQ", href: "/faq" },
     ],
   },
 ];
