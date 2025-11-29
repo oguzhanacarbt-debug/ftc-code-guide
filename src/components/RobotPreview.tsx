@@ -188,83 +188,145 @@ export const RobotPreview = ({
             xmlns="http://www.w3.org/2000/svg"
           >
             <g transform={`translate(${position.x}, ${position.y}) rotate(${rotation}, 0, 0)`}>
-              {/* Robot Body */}
+              {/* Main Chassis Body */}
               <rect
-                x="-50"
-                y="-50"
-                width="100"
-                height="100"
+                x="-45"
+                y="-55"
+                width="90"
+                height="110"
                 fill="hsl(var(--card))"
                 stroke="hsl(var(--border))"
-                strokeWidth="2"
-                rx="4"
+                strokeWidth="3"
+                rx="6"
                 className={isRunning ? "transition-all duration-200" : ""}
               />
-
-              {/* Front indicator */}
-              <polygon
-                points="0,-50 10,-60 -10,-60"
-                fill="hsl(var(--primary))"
+              
+              {/* Chassis Detail Lines */}
+              <rect
+                x="-40"
+                y="-50"
+                width="80"
+                height="100"
+                fill="none"
+                stroke="hsl(var(--muted-foreground))"
+                strokeWidth="1"
+                strokeDasharray="3,3"
+                rx="4"
+                opacity="0.3"
               />
 
-              {/* Motor positions */}
+              {/* Front Bumper */}
+              <rect
+                x="-50"
+                y="-62"
+                width="100"
+                height="7"
+                fill="hsl(var(--primary))"
+                stroke="hsl(var(--primary))"
+                strokeWidth="1"
+                rx="2"
+              />
+
+              {/* Front Direction Indicator */}
+              <polygon
+                points="0,-55 8,-65 -8,-65"
+                fill="hsl(var(--primary))"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1"
+              />
+
+              {/* Mecanum Wheels */}
               {[
-                { name: "leftFront", x: -40, y: -40 },
-                { name: "rightFront", x: 30, y: -40 },
-                { name: "leftRear", x: -40, y: 30 },
-                { name: "rightRear", x: 30, y: 30 },
-              ].map((motor) => {
+                { name: "leftFront", x: -55, y: -40, rotation: 45 },
+                { name: "rightFront", x: 55, y: -40, rotation: -45 },
+                { name: "leftRear", x: -55, y: 40, rotation: -45 },
+                { name: "rightRear", x: 55, y: 40, rotation: 45 },
+              ].map((wheel) => {
                 const isInitialized = hardware.some(
-                  (hw) => hw.name === motor.name && hw.type === "motor"
+                  (hw) => hw.name === wheel.name && hw.type === "motor"
                 );
                 const isActive = isRunning && isInitialized;
                 return (
-                  <g key={motor.name}>
-                    <circle
-                      cx={motor.x}
-                      cy={motor.y}
-                      r="8"
+                  <g key={wheel.name}>
+                    {/* Wheel Body */}
+                    <rect
+                      x={wheel.x - 8}
+                      y={wheel.y - 14}
+                      width="16"
+                      height="28"
+                      rx="4"
                       fill={isInitialized ? "hsl(var(--robot-highlight))" : "hsl(var(--muted))"}
                       stroke="hsl(var(--border))"
                       strokeWidth="2"
                       className={isActive ? "animate-pulse" : ""}
                     />
+                    
+                    {/* Mecanum Rollers - diagonal pattern */}
+                    {[-10, -5, 0, 5, 10].map((offset, i) => (
+                      <line
+                        key={i}
+                        x1={wheel.x - 6}
+                        y1={wheel.y + offset}
+                        x2={wheel.x + 6}
+                        y2={wheel.y + offset + (wheel.rotation > 0 ? 3 : -3)}
+                        stroke="hsl(var(--muted-foreground))"
+                        strokeWidth="1.5"
+                        opacity="0.6"
+                      />
+                    ))}
+                    
+                    {/* Wheel Hub */}
+                    <circle
+                      cx={wheel.x}
+                      cy={wheel.y}
+                      r="4"
+                      fill="hsl(var(--background))"
+                      stroke="hsl(var(--border))"
+                      strokeWidth="1.5"
+                    />
+                    
                     {isInitialized && (
                       <text
-                        x={motor.x}
-                        y={motor.y + 20}
-                        fontSize="8"
+                        x={wheel.x}
+                        y={wheel.y > 0 ? wheel.y + 24 : wheel.y - 20}
+                        fontSize="7"
                         fill="hsl(var(--primary))"
                         textAnchor="middle"
                         className="font-mono font-bold"
                       >
-                        {motor.name}
+                        {wheel.name}
                       </text>
                     )}
                   </g>
                 );
               })}
 
-              {/* IMU position */}
+              {/* IMU Sensor in Center */}
               {hardware.some((hw) => hw.type === "sensor") && (
                 <g>
                   <rect
-                    x="-10"
-                    y="-10"
-                    width="20"
-                    height="20"
+                    x="-12"
+                    y="-12"
+                    width="24"
+                    height="24"
                     fill="hsl(var(--accent))"
                     stroke="hsl(var(--border))"
                     strokeWidth="2"
-                    rx="2"
+                    rx="3"
                   />
+                  {/* IMU Circuit Pattern */}
+                  <line x1="-6" y1="-6" x2="6" y2="-6" stroke="hsl(var(--accent-foreground))" strokeWidth="1" opacity="0.5"/>
+                  <line x1="-6" y1="0" x2="6" y2="0" stroke="hsl(var(--accent-foreground))" strokeWidth="1" opacity="0.5"/>
+                  <line x1="-6" y1="6" x2="6" y2="6" stroke="hsl(var(--accent-foreground))" strokeWidth="1" opacity="0.5"/>
+                  <circle cx="0" cy="0" r="3" fill="hsl(var(--primary))" opacity="0.7"/>
+                  
                   <text
                     x="0"
-                    y="25"
+                    y="28"
                     fontSize="8"
                     fill="hsl(var(--accent-foreground))"
                     textAnchor="middle"
-                    className="font-mono"
+                    className="font-mono font-bold"
                   >
                     IMU
                   </text>
