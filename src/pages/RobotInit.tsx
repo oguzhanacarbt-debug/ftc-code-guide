@@ -113,7 +113,7 @@ public class MotorInitExample extends OpMode {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Four-Wheel Drivetrain (Basic)</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Four-Wheel Drivetrain</h2>
           <p className="text-foreground leading-relaxed mb-4">
             One of the most common drivetrain configurations in FTC is a 4-motor system. 
             In the example below, we initialize all 4 motors and set their directions.
@@ -175,58 +175,6 @@ public class FourWheelDrive extends OpMode {
               spun the same way, the robot would turn instead of moving straight. By reversing one side 
               in code, we ensure that when all motors receive a "forward" command, the robot drives straight.
             </p>
-          </Card>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Using Subsystems (Recommended)</h2>
-          <p className="text-foreground leading-relaxed mb-4">
-            For better code organization, use subsystems that handle initialization. This keeps your OpMode clean and makes hardware management easier.
-          </p>
-
-          <CodeBlock
-            language="java"
-            code={`package org.firstinspires.ftc.teamcode;
-
-import com.arcrobotics.ftclib.command.CommandOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import org.firstinspires.ftc.teamcode.Subsystems.DriveTrainSubsystem;
-
-@TeleOp(name="Subsystem Example", group="Rookie")
-public class SubsystemExample extends CommandOpMode {
-    
-    private DriveTrainSubsystem driveTrainSubsystem;
-
-    @Override
-    public void initialize() {
-        // Initialize subsystem - it handles all motor setup internally
-        driveTrainSubsystem = new DriveTrainSubsystem(hardwareMap, telemetry);
-        
-        // The subsystem constructor:
-        // 1. Gets motors from hardwareMap using Constants
-        // 2. Sets motor directions from Constants
-        // 3. Initializes IMU with orientation from Constants
-        // 4. Sets zero power behavior from Constants
-        
-        telemetry.addData("Status", "Subsystem initialized!");
-        telemetry.update();
-    }
-
-    @Override
-    public void run() {
-        // Subsystem handles everything - see Subsystems tutorial
-    }
-}`}
-          />
-
-          <Card className="mt-6 p-5 bg-primary/5 border-l-4 border-l-primary">
-            <h4 className="font-semibold text-foreground mb-3">Benefits of Subsystems</h4>
-            <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-              <li>All hardware names come from <code className="bg-muted px-1.5 py-0.5 rounded text-xs">Constants</code> - easy to change</li>
-              <li>Initialization logic is reusable across TeleOp and Autonomous</li>
-              <li>Telemetry updates happen automatically in <code className="bg-muted px-1.5 py-0.5 rounded text-xs">periodic()</code></li>
-              <li>Works seamlessly with command-based programming</li>
-            </ul>
           </Card>
         </section>
 

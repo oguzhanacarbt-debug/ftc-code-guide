@@ -1,62 +1,60 @@
 import { NavLink } from "@/components/NavLink";
-import { Book, Settings, Code2, Compass, Database, Lightbulb, FileCode } from "lucide-react";
+import { Book, Zap, Settings, Code2, Compass, Database, Lightbulb, HelpCircle } from "lucide-react";
 
 const navigation = [
   {
-    title: "Overview",
-    icon: Book,
+    title: "Getting Started",
+    icon: Zap,
     items: [
       { title: "Home", href: "/" },
-      { title: "Getting Started", href: "/getting-started" },
+      { title: "Introduction to FTC", href: "/getting-started" },
     ],
   },
   {
-    title: "Robot Foundations",
+    title: "Basic Programming",
+    icon: Code2,
+    items: [
+      { title: "Variables & Functions", href: "/basics" },
+      { title: "OpMode Structure", href: "/opmode" },
+    ],
+  },
+  {
+    title: "Robot Setup",
     icon: Settings,
     items: [
       { title: "Hardware Initialization", href: "/robot-init" },
-      { title: "Constants & Config", href: "/constants" },
-      { title: "Motor Settings", href: "/motor-settings" },
+      { title: "Motors & Servos", href: "/motors" },
     ],
   },
   {
-    title: "Drive & TeleOp",
+    title: "Movement Systems",
     icon: Compass,
     items: [
-      { title: "First TeleOp", href: "/teleop" },
+      { title: "Tank Drive", href: "/tank-drive" },
       { title: "Mecanum Drive", href: "/mecanum-drive" },
     ],
   },
   {
-    title: "Subsystems & Commands",
-    icon: Code2,
-    items: [
-      { title: "Subsystems", href: "/subsystems" },
-      { title: "Command Framework", href: "/commands" },
-      { title: "IMU Subsystem", href: "/imu-subsystem" },
-    ],
-  },
-  {
-    title: "Sensors & Autonomous",
+    title: "Sensors",
     icon: Database,
     items: [
-      { title: "Sensor Integration", href: "/sensor-integration" },
-      { title: "Autonomous Primer", href: "/autonomous" },
+      { title: "IMU", href: "/sensors-imu" },
+      { title: "Encoders", href: "/sensors-encoders" },
     ],
   },
   {
-    title: "Tools",
+    title: "Code Examples",
     icon: Lightbulb,
     items: [
-      { title: "FTCLab Workflow", href: "/ftclab" },
-      { title: "Code Quality & Testing", href: "/code-quality" },
+      { title: "Simple TeleOp", href: "/examples-teleop" },
+      { title: "Autonomous", href: "/examples-auto" },
     ],
   },
   {
-    title: "Examples",
-    icon: FileCode,
+    title: "Help",
+    icon: HelpCircle,
     items: [
-      { title: "Full Season Example", href: "/season-example" },
+      { title: "FAQ", href: "/faq" },
     ],
   },
 ];
