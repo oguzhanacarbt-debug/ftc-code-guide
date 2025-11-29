@@ -24,6 +24,7 @@ const navigation = [
     items: [
       { title: "Hardware Initialization", href: "/robot-init" },
       { title: "Motors & Servos", href: "/motors" },
+      { title: "Autonomous Mode", href: "/autonomous" },
     ],
   },
   {
