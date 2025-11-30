@@ -18,6 +18,21 @@ const navigation = [
       { title: "Otonom Mod", href: "/autonomous" },
     ],
   },
+  {
+    title: "Kontrol & Sensörler",
+    icon: Code2,
+    items: [
+      { title: "TeleOp Modu", href: "/teleop" },
+      { title: "Sensörler", href: "/sensors" },
+    ],
+  },
+  {
+    title: "İleri Seviye",
+    icon: Compass,
+    items: [
+      { title: "Hareket Sistemleri", href: "/movement-systems" },
+    ],
+  },
 ];
 
 export const DocsSidebar = () => {
