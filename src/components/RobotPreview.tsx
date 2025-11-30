@@ -134,7 +134,7 @@ export const RobotPreview = ({
       <div className="p-6">
         <div className="flex items-center gap-2 mb-6">
           <Activity className="w-5 h-5 text-primary" />
-          <h2 className="text-lg font-semibold text-foreground">Robot Preview</h2>
+          <h2 className="text-lg font-semibold text-foreground">Robot Önizleme</h2>
         </div>
 
         {movementSequence.length > 0 && (
@@ -147,7 +147,7 @@ export const RobotPreview = ({
                 className="flex-1"
               >
                 <Play className="w-4 h-4 mr-1" />
-                Run
+                Çalıştır
               </Button>
               <Button
                 onClick={handleStop}
@@ -167,7 +167,7 @@ export const RobotPreview = ({
             </div>
             {isRunning && currentCommand && (
               <div className="text-xs text-muted-foreground bg-accent/20 px-3 py-2 rounded">
-                Executing: <span className="font-semibold capitalize">{currentCommand.type}</span>
+                Çalıştırılıyor: <span className="font-semibold capitalize">{currentCommand.type}</span>
               </div>
             )}
             {codeDescription && (
@@ -178,7 +178,7 @@ export const RobotPreview = ({
 
         <div className="bg-card border border-border rounded-lg p-4 mb-4">
           <p className="text-sm text-muted-foreground mb-4">
-            {movementSequence.length > 0 ? "Click 'Run' to simulate movement" : "Initialized hardware will appear here"}
+            {movementSequence.length > 0 ? "Hareketi simüle etmek için 'Çalıştır'a tıkla" : "Başlatılan donanım burada görünecek"}
           </p>
           
           {/* Robot Chassis SVG */}
@@ -338,10 +338,10 @@ export const RobotPreview = ({
 
         {/* Hardware List */}
         <div className="space-y-2">
-          <h3 className="text-sm font-semibold text-foreground mb-2">Initialized Hardware</h3>
+          <h3 className="text-sm font-semibold text-foreground mb-2">Başlatılan Donanım</h3>
           {hardware.length === 0 ? (
             <p className="text-xs text-muted-foreground italic">
-              No hardware initialized yet
+              Henüz başlatılan donanım yok
             </p>
           ) : (
             <ul className="space-y-1">

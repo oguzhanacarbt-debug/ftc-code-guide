@@ -3,19 +3,19 @@ import { Book, Zap, Settings, Code2, Compass, Database, Lightbulb, HelpCircle } 
 
 const navigation = [
   {
-    title: "Getting Started",
+    title: "Başlangıç",
     icon: Zap,
     items: [
-      { title: "Home", href: "/" },
-      { title: "Introduction to FTC", href: "/getting-started" },
+      { title: "Ana Sayfa", href: "/" },
+      { title: "FTC'ye Giriş", href: "/getting-started" },
     ],
   },
   {
-    title: "Robot Setup",
+    title: "Robot Kurulumu",
     icon: Settings,
     items: [
-      { title: "Hardware Initialization", href: "/robot-init" },
-      { title: "Autonomous Mode", href: "/autonomous" },
+      { title: "Donanım Başlatma", href: "/robot-init" },
+      { title: "Otonom Mod", href: "/autonomous" },
     ],
   },
 ];
@@ -26,7 +26,7 @@ export const DocsSidebar = () => {
       <div className="p-6">
         <div className="flex items-center gap-2 mb-8">
           <Book className="w-6 h-6 text-primary" />
-          <h1 className="text-xl font-bold text-foreground">FTC Docs</h1>
+          <h1 className="text-xl font-bold text-foreground">FTC Rehberi</h1>
         </div>
 
         <nav className="space-y-6">

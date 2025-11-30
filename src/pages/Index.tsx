@@ -12,31 +12,31 @@ const Index = () => {
           <div className="text-center space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Rocket className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">FTC Rookie Developer Guide</span>
+              <span className="text-sm font-medium text-primary">FTC Yeni Başlayanlar Rehberi</span>
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Learn FTC Robot
+              FTC Robot Programlamayı
               <br />
-              <span className="text-primary">Programming from Scratch</span>
+              <span className="text-primary">Sıfırdan Öğren</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              A comprehensive guide designed to teach FIRST Tech Challenge robot programming 
-              step-by-step with visual support and interactive examples.
+              FIRST Tech Challenge robot programlamayı adım adım, görsel destekle ve 
+              interaktif örneklerle öğretmek için tasarlanmış kapsamlı bir rehber.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <Link to="/getting-started">
                 <Button size="lg" className="gap-2 text-base">
-                  Get Started
+                  Başla
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
               <Link to="/robot-init">
                 <Button size="lg" variant="outline" className="gap-2 text-base">
                   <Code2 className="w-4 h-4" />
-                  Example Code
+                  Örnek Kodlar
                 </Button>
               </Link>
             </div>
@@ -53,7 +53,7 @@ const Index = () => {
       {/* Features Section */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-3xl font-bold text-center text-foreground mb-12">
-          Why This Guide?
+          Neden Bu Rehber?
         </h2>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -62,11 +62,11 @@ const Index = () => {
               <Book className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">
-              Step-by-Step Learning
+              Adım Adım Öğrenme
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Everything from basic programming concepts to advanced robot control, 
-              explained in rookie-friendly language.
+              Temel programlama kavramlarından gelişmiş robot kontrolüne kadar her şey, 
+              yeni başlayanlar için uygun bir dille açıklanmıştır.
             </p>
           </Card>
 
@@ -75,10 +75,10 @@ const Index = () => {
               <Code2 className="w-6 h-6 text-accent" />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">
-              Copy-Paste Code Examples
+              Kopyala-Yapıştır Kod Örnekleri
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              All code examples feature syntax highlighting and one-click copy functionality.
+              Tüm kod örnekleri sözdizimi vurgulaması ve tek tıkla kopyalama özelliğine sahiptir.
             </p>
           </Card>
 
@@ -87,10 +87,10 @@ const Index = () => {
               <Zap className="w-6 h-6 text-robot-highlight" />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">
-              Interactive Robot Preview
+              İnteraktif Robot Önizlemesi
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              See motors and sensors you initialize in code visualized in real-time on the robot diagram.
+              Kodda tanımladığınız motorları ve sensörleri robot diyagramında gerçek zamanlı olarak görselleştirilmiş şekilde görün.
             </p>
           </Card>
         </div>
@@ -100,16 +100,16 @@ const Index = () => {
       <section className="max-w-7xl mx-auto px-6 py-20">
         <Card className="p-12 text-center bg-gradient-to-br from-primary/5 to-accent/5 border-border">
           <h2 className="text-3xl font-bold text-foreground mb-4">
-            Ready to Start?
+            Başlamaya Hazır mısın?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Begin learning FTC robot programming now. Everything you need 
-            to write your first OpMode is right here.
+            FTC robot programlamayı öğrenmeye şimdi başla. İlk OpMode'unu yazmak için 
+            ihtiyacın olan her şey burada.
           </p>
           <Link to="/getting-started">
             <Button size="lg" className="gap-2">
               <Book className="w-5 h-5" />
-              Go to Documentation
+              Dökümantasyona Git
             </Button>
           </Link>
         </Card>

@@ -15,9 +15,9 @@ const RobotInit = () => {
     <DocsLayout robotHardware={hardware}>
       <article className="prose prose-slate max-w-none">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Robot Initialization</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Robot Başlatma</h1>
           <p className="text-lg text-muted-foreground">
-            Learn how to define motors, servos, and sensors in your robot code.
+            Robot kodunda motor, servo ve sensörleri nasıl tanımlayacağını öğren.
           </p>
         </div>
 
@@ -25,12 +25,12 @@ const RobotInit = () => {
           <div className="flex items-start gap-3">
             <Settings className="w-5 h-5 text-primary mt-0.5" />
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">What You'll Learn</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">Neler Öğreneceksin?</h3>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                <li>What is hardwareMap and how to use it?</li>
-                <li>Motor initialization steps</li>
-                <li>Setting motor directions</li>
-                <li>See robot initialization in real-time on the right panel!</li>
+                <li>hardwareMap nedir ve nasıl kullanılır?</li>
+                <li>Motor başlatma adımları</li>
+                <li>Motor yönlerini ayarlama</li>
+                <li>Sağdaki panelde robot başlatmayı gerçek zamanlı olarak gör!</li>
               </ul>
             </div>
           </div>
@@ -39,60 +39,61 @@ const RobotInit = () => {
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4 flex items-center gap-2">
             <Zap className="w-8 h-8 text-primary" />
-            What is hardwareMap?
+            hardwareMap Nedir?
           </h2>
           <p className="text-foreground leading-relaxed mb-4">
-            <code className="bg-muted px-2 py-1 rounded text-sm">hardwareMap</code> is a special object 
-            in the FTC SDK used to access your robot's physical hardware. 
-            This object creates the connection between your code and components like motors, servos, and sensors.
+            <code className="bg-muted px-2 py-1 rounded text-sm">hardwareMap</code>, FTC SDK'da 
+            robotunun fiziksel donanımına erişmek için kullanılan özel bir nesnedir. 
+            Bu nesne, kodunla motor, servo ve sensörler gibi bileşenler arasında bağlantı kurar.
           </p>
 
           <Card className="p-5 bg-card border-border mb-6">
-            <h4 className="font-semibold text-foreground mb-3">hardwareMap Logic</h4>
+            <h4 className="font-semibold text-foreground mb-3">hardwareMap Mantığı</h4>
             <p className="text-sm text-muted-foreground mb-3">
-              In the Robot Controller configuration, you give each piece of hardware a <strong>name</strong> 
-              (for example, "leftFront"). Then in your code, you use that name to access the hardware.
+              Robot Controller yapılandırmasında, her donanım parçasına bir <strong>isim</strong> verirsin 
+              (örneğin, "leftFront"). Sonra kodunda, o ismi kullanarak donanıma erişirsin.
             </p>
             <div className="bg-muted/50 rounded p-3 text-xs font-mono text-muted-foreground">
               Robot Config: leftFront → Port 0<br />
-              In Code: hardwareMap.dcMotor.get("leftFront")
+              Kodda: hardwareMap.dcMotor.get("leftFront")
             </div>
           </Card>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Initializing Motors</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Motorları Başlatma</h2>
           <p className="text-foreground leading-relaxed mb-4">
-            To initialize a motor, first create a <code className="bg-muted px-2 py-1 rounded text-sm">DcMotor</code> 
-            variable, then assign the motor object to that variable using <code className="bg-muted px-2 py-1 rounded text-sm">hardwareMap</code>.
+            Bir motoru başlatmak için önce bir <code className="bg-muted px-2 py-1 rounded text-sm">DcMotor</code> 
+            değişkeni oluştur, sonra <code className="bg-muted px-2 py-1 rounded text-sm">hardwareMap</code> 
+            kullanarak motor nesnesini bu değişkene ata.
           </p>
 
-          <h3 className="text-xl font-semibold text-foreground mb-3">Example: Single Motor</h3>
+          <h3 className="text-xl font-semibold text-foreground mb-3">Örnek: Tek Motor</h3>
           <CodeBlock
             language="java"
-            code={`@TeleOp(name="Motor Init Example", group="Rookie")
-public class MotorInitExample extends OpMode {
+            code={`@TeleOp(name="Motor Başlatma Örneği", group="Yeni Başlayanlar")
+public class MotorBaslatmaOrnegi extends OpMode {
     
-    // Define the motor variable
+    // Motor değişkenini tanımla
     private DcMotor leftFront;
 
     @Override
     public void init() {
-        // Initialize the motor with hardwareMap
+        // Motoru hardwareMap ile başlat
         leftFront = hardwareMap.dcMotor.get("leftFront");
         
-        // Set motor direction
+        // Motor yönünü ayarla
         leftFront.setDirection(DcMotor.Direction.FORWARD);
         
-        // Start motor at zero power
+        // Motoru sıfır güçle başlat
         leftFront.setPower(0);
         
-        telemetry.addData("Status", "Motor initialized!");
+        telemetry.addData("Durum", "Motor başlatıldı!");
     }
 
     @Override
     public void loop() {
-        // Motor control will go here
+        // Motor kontrolü buraya gelecek
     }
 }`}
           />
@@ -101,11 +102,11 @@ public class MotorInitExample extends OpMode {
             <div className="flex items-start gap-3">
               <AlertTriangle className="w-5 h-5 text-accent mt-0.5" />
               <div>
-                <h4 className="font-semibold text-foreground mb-1">Warning!</h4>
+                <h4 className="font-semibold text-foreground mb-1">Uyarı!</h4>
                 <p className="text-sm text-muted-foreground">
-                  The name inside <code className="bg-muted px-1.5 py-0.5 rounded text-xs">hardwareMap.dcMotor.get("leftFront")</code> 
-                  must be <strong>exactly the same</strong> as the name you gave it in the Robot Controller config. 
-                  Otherwise, the program won't work!
+                  <code className="bg-muted px-1.5 py-0.5 rounded text-xs">hardwareMap.dcMotor.get("leftFront")</code> 
+                  içindeki isim, Robot Controller config'de verdiğin isimle <strong>tamamen aynı</strong> olmalı. 
+                  Aksi halde program çalışmaz!
                 </p>
               </div>
             </div>
@@ -113,22 +114,22 @@ public class MotorInitExample extends OpMode {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Four-Wheel Drivetrain</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Dört Tekerlekli Tahrik Sistemi</h2>
           <p className="text-foreground leading-relaxed mb-4">
-            One of the most common drivetrain configurations in FTC is a 4-motor system. 
-            In the example below, we initialize all 4 motors and set their directions.
+            FTC'de en yaygın tahrik yapılandırmalarından biri 4 motorlu sistemdir. 
+            Aşağıdaki örnekte, 4 motoru başlatıyor ve yönlerini ayarlıyoruz.
           </p>
 
           <p className="text-sm text-muted-foreground mb-4">
-            👉 Watch the <strong>right panel</strong> to see the initialized motors visualized!
+            👉 Başlatılan motorları görselleştirilmiş halde görmek için <strong>sağ paneli</strong> izle!
           </p>
 
           <CodeBlock
             language="java"
-            code={`@TeleOp(name="Four Wheel Drive", group="Rookie")
-public class FourWheelDrive extends OpMode {
+            code={`@TeleOp(name="Dört Tekerlekli Tahrik", group="Yeni Başlayanlar")
+public class DortTekerlekliTahrik extends OpMode {
     
-    // Four motor variables
+    // Dört motor değişkeni
     private DcMotor leftFront;
     private DcMotor rightFront;
     private DcMotor leftRear;
@@ -136,53 +137,53 @@ public class FourWheelDrive extends OpMode {
 
     @Override
     public void init() {
-        // Initialize all motors
+        // Tüm motorları başlat
         leftFront = hardwareMap.dcMotor.get("leftFront");
         rightFront = hardwareMap.dcMotor.get("rightFront");
         leftRear = hardwareMap.dcMotor.get("leftRear");
         rightRear = hardwareMap.dcMotor.get("rightRear");
         
-        // Set motor directions
-        // Left side FORWARD, right side typically REVERSE
+        // Motor yönlerini ayarla
+        // Sol taraf İLERİ, sağ taraf genellikle GERİ
         leftFront.setDirection(DcMotor.Direction.FORWARD);
         leftRear.setDirection(DcMotor.Direction.FORWARD);
         rightFront.setDirection(DcMotor.Direction.REVERSE);
         rightRear.setDirection(DcMotor.Direction.REVERSE);
         
-        // Start all motors at zero power
+        // Tüm motorları sıfır güçle başlat
         leftFront.setPower(0);
         rightFront.setPower(0);
         leftRear.setPower(0);
         rightRear.setPower(0);
         
-        telemetry.addData("Status", "All motors initialized!");
+        telemetry.addData("Durum", "Tüm motorlar başlatıldı!");
         telemetry.update();
     }
 
     @Override
     public void loop() {
-        // Movement code will go here
-        telemetry.addData("Mode", "Ready to drive");
+        // Hareket kodu buraya gelecek
+        telemetry.addData("Mod", "Sürüş için hazır");
         telemetry.update();
     }
 }`}
           />
 
           <Card className="mt-6 p-5 bg-muted/30 border-border">
-            <h4 className="font-semibold text-foreground mb-3">Why Are Right Motors REVERSE?</h4>
+            <h4 className="font-semibold text-foreground mb-3">Sağ Motorlar Neden REVERSE?</h4>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Motors on opposite sides of the robot are mounted facing opposite directions. If they all 
-              spun the same way, the robot would turn instead of moving straight. By reversing one side 
-              in code, we ensure that when all motors receive a "forward" command, the robot drives straight.
+              Robotun karşı taraflarındaki motorlar ters yönde monte edilmiştir. Hepsi aynı yönde 
+              dönseydi, robot düz gitmek yerine dönüş yapardı. Kodda bir tarafı tersine çevirerek, 
+              tüm motorlar "ileri" komutu aldığında robotun düz gitmesini sağlarız.
             </p>
           </Card>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">What's Next?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Sırada Ne Var?</h2>
           <p className="text-foreground leading-relaxed">
-            Now you've learned how to initialize motors! In the next step, you'll learn 
-            how to control these motors with a joystick and explore basic movement systems.
+            Artık motorları nasıl başlatacağını öğrendin! Bir sonraki adımda, 
+            bu motorları joystick ile nasıl kontrol edeceğini ve temel hareket sistemlerini keşfedeceksin.
           </p>
         </section>
       </article>
