@@ -8,9 +8,9 @@ const GettingStarted = () => {
     <DocsLayout>
       <article className="prose prose-slate max-w-none">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">FTC'ye Giriş</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4">Introduction to FTC</h1>
           <p className="text-lg text-muted-foreground">
-            FIRST Tech Challenge robot programlamaya başlamadan önce bilmen gereken temel kavramlar.
+            Essential concepts you need to know before starting FIRST Tech Challenge robot programming.
           </p>
         </div>
 
@@ -18,12 +18,12 @@ const GettingStarted = () => {
           <div className="flex items-start gap-3">
             <BookOpen className="w-5 h-5 text-primary mt-0.5" />
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">Neler Öğreneceksin?</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-2">What You'll Learn</h3>
               <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
-                <li>FTC nedir ve nasıl çalışır?</li>
-                <li>SDK (Yazılım Geliştirme Kiti) kavramı</li>
-                <li>OpMode nedir ve türleri nelerdir?</li>
-                <li>Robot Controller ve Driver Station</li>
+                <li>What is FTC and how does it work?</li>
+                <li>SDK (Software Development Kit) concept</li>
+                <li>What is an OpMode and its types</li>
+                <li>Robot Controller and Driver Station</li>
               </ul>
             </div>
           </div>
@@ -32,55 +32,55 @@ const GettingStarted = () => {
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4 flex items-center gap-2">
             <Cpu className="w-8 h-8 text-primary" />
-            FTC Nedir?
+            What is FTC?
           </h2>
           <p className="text-foreground leading-relaxed mb-4">
-            FIRST Tech Challenge (FTC), lise öğrencilerinin robot tasarlayıp programladığı uluslararası 
-            bir robotik yarışmasıdır. Her takım, yarışmalarda belirli görevleri tamamlamak için bir robot 
-            inşa eder ve programlar.
+            FIRST Tech Challenge (FTC) is an international robotics competition where high school 
+            students design and program robots. Each team builds and programs a robot to complete 
+            specific tasks during competitions.
           </p>
 
           <Card className="p-5 bg-muted/50 border-border">
-            <h4 className="font-semibold text-foreground mb-2">FTC Robot Anatomisi</h4>
+            <h4 className="font-semibold text-foreground mb-2">FTC Robot Anatomy</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><strong className="text-foreground">Robot Controller:</strong> Robotu kontrol eden yasal android telefonlar veya Driver Station'lar</li>
-              <li><strong className="text-foreground">Driver Station:</strong> Sürücüler tarafından kullanılan kontrol telefonu</li>
-              <li><strong className="text-foreground">Control Hub/Expansion Hub:</strong> Motorların ve sensörlerin bağlandığı elektronik beyin</li>
-              <li><strong className="text-foreground">Motor & Servo:</strong> Hareketi sağlayan aktüatörler</li>
-              <li><strong className="text-foreground">Sensörler:</strong> Robotun çevresini algılayan bileşenler (IMU, encoder, mesafe sensörleri...)</li>
+              <li><strong className="text-foreground">Robot Controller:</strong> Legal android phones or Driver Stations that controls the robot</li>
+              <li><strong className="text-foreground">Driver Station:</strong> Control phone used by drivers</li>
+              <li><strong className="text-foreground">Control Hub/Expansion Hub:</strong> Electronic brain where motors and sensors connect</li>
+              <li><strong className="text-foreground">Motors & Servos:</strong> Actuators that provide movement</li>
+              <li><strong className="text-foreground">Sensors:</strong> Components that detect the robot's environment (IMU, encoders, distance sensors...)</li>
             </ul>
           </Card>
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">SDK (Yazılım Geliştirme Kiti)</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">SDK (Software Development Kit)</h2>
           <p className="text-foreground leading-relaxed mb-4">
-            FTC robotlarını programlamak için <strong>FTC Robot Controller SDK</strong>'sını kullanırsın. 
-            Bu SDK Java tabanlıdır ve Android Studio üzerinde çalışır.
+            To program FTC robots, you use the <strong>FTC Robot Controller SDK</strong>. 
+            This SDK is Java-based and runs on Android Studio.
           </p>
 
           <div className="bg-card border border-border rounded-lg p-5 mb-4">
-            <h4 className="font-semibold text-foreground mb-3">SDK İçeriği</h4>
+            <h4 className="font-semibold text-foreground mb-3">SDK Contents</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
                 <div>
-                  <strong className="text-foreground">OpMode Çerçevesi:</strong>
-                  <span className="text-muted-foreground"> Robot programlarını yapılandıran temel sınıflar</span>
+                  <strong className="text-foreground">OpMode Framework:</strong>
+                  <span className="text-muted-foreground"> Base classes that structure robot programs</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
                 <div>
-                  <strong className="text-foreground">Donanım Sınıfları:</strong>
-                  <span className="text-muted-foreground"> Motor, servo ve sensörler gibi donanımı kontrol eden sınıflar</span>
+                  <strong className="text-foreground">Hardware Classes:</strong>
+                  <span className="text-muted-foreground"> Classes that control hardware like motors, servos, and sensors</span>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2" />
                 <div>
-                  <strong className="text-foreground">Telemetri:</strong>
-                  <span className="text-muted-foreground"> Driver Station'a veri göndermek için kullanılan sistem</span>
+                  <strong className="text-foreground">Telemetry:</strong>
+                  <span className="text-muted-foreground"> System used to send data to the Driver Station</span>
                 </div>
               </div>
             </div>
@@ -88,56 +88,56 @@ const GettingStarted = () => {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">OpMode Nedir?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">What is an OpMode?</h2>
           <p className="text-foreground leading-relaxed mb-4">
-            <strong>OpMode</strong>, FTC'de yazacağın her robot programının temel yapı taşıdır. 
-            Bir OpMode, robotun belirli bir görevi nasıl gerçekleştireceğini tanımlar.
+            An <strong>OpMode</strong> is the fundamental building block of every robot program you write in FTC. 
+            An OpMode defines how the robot performs a specific task.
           </p>
 
-          <h3 className="text-xl font-semibold text-foreground mb-3">OpMode Türleri</h3>
+          <h3 className="text-xl font-semibold text-foreground mb-3">OpMode Types</h3>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <Card className="p-5 border-border">
               <h4 className="font-semibold text-foreground mb-2">TeleOp (Teleoperated)</h4>
               <p className="text-sm text-muted-foreground mb-3">
-                Sürücü kontrollü mod. Robot joystick ve butonlarla kontrol edilir.
+                Driver-controlled mode. Robot is controlled using joysticks and buttons.
               </p>
               <div className="text-xs text-muted-foreground bg-muted rounded px-2 py-1 inline-block">
-                Örnek: Sürücü Dönemi
+                Example: Driver Period
               </div>
             </Card>
 
             <Card className="p-5 border-border">
-              <h4 className="font-semibold text-foreground mb-2">Autonomous (Otonom)</h4>
+              <h4 className="font-semibold text-foreground mb-2">Autonomous</h4>
               <p className="text-sm text-muted-foreground mb-3">
-                Robotun bağımsız çalıştığı mod. Önceden yazılmış komutlar sırayla çalışır.
+                Mode where robot runs independently. Pre-written commands execute in sequence.
               </p>
               <div className="text-xs text-muted-foreground bg-muted rounded px-2 py-1 inline-block">
-                Örnek: 30 saniyelik otonom periyod
+                Example: 30-second autonomous period
               </div>
             </Card>
           </div>
 
-          <h3 className="text-xl font-semibold text-foreground mb-3">Basit OpMode Örneği</h3>
+          <h3 className="text-xl font-semibold text-foreground mb-3">Simple OpMode Example</h3>
           <p className="text-muted-foreground mb-4 text-sm">
-            Aşağıda basit bir TeleOp OpMode yapısını görebilirsin:
+            Below you can see a basic TeleOp OpMode structure:
           </p>
 
           <CodeBlock
             language="java"
-            code={`@TeleOp(name="İlk TeleOp", group="Yeni Başlayanlar")
-public class IlkTeleOp extends OpMode {
+            code={`@TeleOp(name="First TeleOp", group="Rookie")
+public class FirstTeleOp extends OpMode {
     
-    // Bu fonksiyon OpMode başlatıldığında bir kez çalışır
+    // This function runs once when the OpMode is initialized
     @Override
     public void init() {
-        telemetry.addData("Durum", "Başlatıldı");
+        telemetry.addData("Status", "Initialized");
     }
 
-    // Bu fonksiyon START'a basıldıktan sonra sürekli çalışır
+    // This function runs continuously after pressing START
     @Override
     public void loop() {
-        telemetry.addData("Durum", "Çalışıyor");
+        telemetry.addData("Status", "Running");
         telemetry.update();
     }
 }`}
@@ -147,11 +147,11 @@ public class IlkTeleOp extends OpMode {
             <div className="flex items-start gap-3">
               <AlertCircle className="w-5 h-5 text-accent mt-0.5" />
               <div>
-                <h4 className="font-semibold text-foreground mb-1">Önemli Not</h4>
+                <h4 className="font-semibold text-foreground mb-1">Important Note</h4>
                 <p className="text-sm text-muted-foreground">
-                  <code className="bg-muted px-1.5 py-0.5 rounded text-xs">@TeleOp</code> annotasyonu 
-                  bu OpMode'u Driver Station'da "TeleOp" kategorisinde görünür yapar. 
-                  Otonom için <code className="bg-muted px-1.5 py-0.5 rounded text-xs">@Autonomous</code> kullan.
+                  The <code className="bg-muted px-1.5 py-0.5 rounded text-xs">@TeleOp</code> annotation 
+                  makes this OpMode appear in the "TeleOp" category on the Driver Station. 
+                  For Autonomous, use <code className="bg-muted px-1.5 py-0.5 rounded text-xs">@Autonomous</code>.
                 </p>
               </div>
             </div>
@@ -159,10 +159,10 @@ public class IlkTeleOp extends OpMode {
         </section>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Sırada Ne Var?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">What's Next?</h2>
           <p className="text-foreground leading-relaxed mb-4">
-            Artık FTC'nin temel kavramlarını öğrendin! Bir sonraki adımda, 
-            robotunu nasıl başlatacağını ve ilk motorunu nasıl kontrol edeceğini öğreneceksin.
+            Now you've learned the basic concepts of FTC! In the next step, you'll learn 
+            how to initialize your robot and control your first motor.
           </p>
         </section>
       </article>
