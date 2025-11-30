@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import GettingStarted from "./pages/GettingStarted";
 import RobotInit from "./pages/RobotInit";
 import Autonomous from "./pages/Autonomous";
+import TeleOp from "./pages/TeleOp";
+import Sensors from "./pages/Sensors";
+import MovementSystems from "./pages/MovementSystems";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/getting-started" element={<GettingStarted />} />
           <Route path="/robot-init" element={<RobotInit />} />
           <Route path="/autonomous" element={<Autonomous />} />
+          <Route path="/teleop" element={<TeleOp />} />
+          <Route path="/sensors" element={<Sensors />} />
+          <Route path="/movement-systems" element={<MovementSystems />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
